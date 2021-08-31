@@ -1,7 +1,7 @@
 // EVEN OR ODD
 
 // 1. the user take a guess, between to string
-const userGuess = (guess1, guess2) => {
+const userGuessTheFirst = (guess1, guess2) => {
     let userChoise = prompt(`Choose! ${guess1} or ${guess2}?`).toLowerCase();
     // if the user choose the first string, return true
     if ( userChoise === guess1.toLowerCase() ) {
@@ -12,15 +12,29 @@ const userGuess = (guess1, guess2) => {
     // if the user choose is not valid repeat 
     } else { 
         alert("Invalid choice");
-        return userGuess("Even", "Odd");
+        return userGuessTheFirst(guess1, guess2);
     }
 }
-let userGuessedEven = userGuess("Even", "Odd");
+// let userGuessedEven = userGuessTheFirst("Even", "Odd");
 
+// 2. user number
+const userChooseANumber = (min, max) => {
+    let userNumber = parseInt(prompt(`Choose a number between ${min} and ${max}`))
+    if ( !isNaN(userNumber) && userNumber >= min && userNumber <= max ) {
+        return userNumber;
+    } else {
+        alert("Invalid number");
+        return userChooseANumber(min, max);
+    }
+}
 
-// 2. generate a random number 
-// 3. sum to numbers
-// 4. check if the number is even
-// 5. store and comunicate computer's number
-// 6. check if the user's is right
-// 7. declare the winner
+// 3. generate a random number, between a min and a max value
+const randomNumber = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+// 4. sum to numbers
+// 5. check if the number is even
+// 6. store and comunicate computer's number
+// 7. check if the user's is right
+// 8. declare the winner
