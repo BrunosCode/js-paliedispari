@@ -15,7 +15,6 @@ const userGuessTheFirst = (guess1, guess2) => {
         return userGuessTheFirst(guess1, guess2);
     }
 }
-// let userGuessedEven = userGuessTheFirst("Even", "Odd");
 
 // 2. user number
 const userChooseANumber = (min, max) => {
@@ -34,7 +33,40 @@ const randomNumber = (min, max) => {
 }
 
 // 4. sum to numbers
+const sum = (num1, num2) => {
+    let sum = num1 + num2;
+    if (isNaN(sum)) {
+        console.log("sum is not a number");
+    }
+    return sum;
+}
+
 // 5. check if the number is even
-// 6. store and comunicate computer's number
+const isEven = (num) => {
+    if (num % 2 == 0) {
+        return true;
+    } else if (num % 2) {
+        return false;
+    } else if (isNaN(num)) {
+        console.log("I can't check a NaN");
+    }
+}
+
+// 6. store user's guess, computer's and user's number
+let userGuessedEven = userGuessTheFirst("Even", "Odd");
+console.log(`userGuessedEven ${userGuessedEven}`)
+let userNumber = userChooseANumber(1,5);
+console.log(`userNumber ${userNumber}`)
+let computerNumber = randomNumber(1,5);
+console.log(`computerNumber ${computerNumber}`)
+let sumIsEven = isEven(sum(userNumber, computerNumber));
+console.log(`sumIsEven ${sumIsEven}`)
+
 // 7. check if the user's is right
-// 8. declare the winner
+if (userGuessedEven == sumIsEven) {
+    alert("You have won");
+} else if (userGuessedEven != sumIsEven) {
+    alert("You have lost");
+} else {
+    alert("Error");
+}
