@@ -52,21 +52,24 @@ const isEven = (num) => {
     }
 }
 
-// 6. store user's guess, computer's and user's number
-let userGuessedEven = userGuessTheFirst("Even", "Odd");
-console.log(`userGuessedEven ${userGuessedEven}`)
-let userNumber = userChooseANumber(1,5);
-console.log(`userNumber ${userNumber}`)
-let computerNumber = randomNumber(1,5);
-console.log(`computerNumber ${computerNumber}`)
-let sumIsEven = isEven(sum(userNumber, computerNumber));
-console.log(`sumIsEven ${sumIsEven}`)
-
-// 7. check if the user's is right
-if (userGuessedEven == sumIsEven) {
-    alert("You have won");
-} else if (userGuessedEven != sumIsEven) {
-    alert("You have lost");
-} else {
-    alert("Error");
-}
+// start button
+document.getElementById("start").addEventListener("click", () => {
+    // 6. store user's guess, computer's and user's number
+    let userGuessedEven = userGuessTheFirst("Even", "Odd");
+    console.log(`userGuessedEven ${userGuessedEven}`)
+    let userNumber = userChooseANumber(1,5);
+    console.log(`userNumber ${userNumber}`)
+    let computerNumber = randomNumber(1,5);
+    console.log(`computerNumber ${computerNumber}`)
+    let sumIsEven = isEven(sum(userNumber, computerNumber));
+    console.log(`sumIsEven ${sumIsEven}`)
+    
+    // 7. check if the user's is right
+    if (userGuessedEven == sumIsEven) {
+        alert("You have won");
+    } else if (userGuessedEven != sumIsEven) {
+        alert("You have lost");
+    } else {
+        alert("Error");
+    }
+})
