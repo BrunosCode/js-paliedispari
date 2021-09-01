@@ -43,3 +43,10 @@
     transform: scale(.9);
     cursor: pointer;
 }
+
+input {
+    padding: .25rem;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 1rem;
+}
