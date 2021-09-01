@@ -3,13 +3,13 @@
 // 1. the user take a guess, between to string
 const userGuessTheFirst = (guess1, guess2) => {
     let userChoise = prompt(`Choose! ${guess1} or ${guess2}?`).toLowerCase();
-    // if the user choose the first string, return true
+    // if the user chooses the first string, return true
     if ( userChoise === guess1.toLowerCase() ) {
         return true;
-    // if the user choose the second string, return false
+    // if the user chooses the second string, return false
     } else if ( userChoise === guess2.toLowerCase() ) {
         return false;
-    // if the user choose is not valid repeat 
+    // if the user chooses is not valid repeat 
     } else { 
         alert("Invalid choice");
         return userGuessTheFirst(guess1, guess2);
@@ -17,7 +17,7 @@ const userGuessTheFirst = (guess1, guess2) => {
 }
 
 // 2. user number
-const userChooseANumber = (min, max) => {
+const userChoosenNumber = (min, max) => {
     let userNumber = parseInt(prompt(`Choose a number between ${min} and ${max}`))
     if ( !isNaN(userNumber) && userNumber >= min && userNumber <= max ) {
         return userNumber;
@@ -56,13 +56,16 @@ const isEven = (num) => {
 document.getElementById("start").addEventListener("click", () => {
     // 6. store user's guess, computer's and user's number
     let userGuessedEven = userGuessTheFirst("Even", "Odd");
-    console.log(`userGuessedEven ${userGuessedEven}`)
-    let userNumber = userChooseANumber(1,5);
-    console.log(`userNumber ${userNumber}`)
+    console.log(`userGuessedEven ${userGuessedEven}`);
+
+    let userNumber = userChoosenNumber(1,5);
+    console.log(`userNumber ${userNumber}`);
+
     let computerNumber = randomNumber(1,5);
-    console.log(`computerNumber ${computerNumber}`)
+    console.log(`computerNumber ${computerNumber}`);
+
     let sumIsEven = isEven(sum(userNumber, computerNumber));
-    console.log(`sumIsEven ${sumIsEven}`)
+    console.log(`sumIsEven ${sumIsEven}`);
     
     // 7. check if the user's is right
     if (userGuessedEven == sumIsEven) {
