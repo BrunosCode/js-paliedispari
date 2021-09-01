@@ -2,7 +2,7 @@
 
 // 1. ask a word to the user
 const userWord = () => {
-    return document.getElementById("word").value;
+    return document.getElementById("word").value.replace(/ /g, '');
 }
 
 // 2. reverse the word
